@@ -1,0 +1,73 @@
+*{box-sizing:border-box}:root{--bg:#111315;--panel:#1b1e21;--text:#f0f1f2;--muted:#a6abb0;--silver:#d9dde0;--accent:#d8b56a}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 50% -10%,#34393d,transparent 45%),var(--bg)}button{font:inherit;cursor:pointer}.app{width:min(1200px,94vw);margin:auto;padding:25px 0 40px}.hidden{display:none!important}header{text-align:center}.coin-logo{width:64px;height:64px;margin:0 auto 8px;display:grid;place-items:center;border-radius:50%;font-size:30px;color:#3d4144;background:radial-gradient(circle at 35% 30%,#fff,#dfe2e4 22%,#9ca2a7 58%,#5e6469);border:3px solid #aeb3b7;box-shadow:inset 2px 2px 4px #fff8,inset -4px -5px 7px #0008,0 8px 25px #0008}h1{margin:0;letter-spacing:.22em;font-size:clamp(32px,7vw,56px)}header>p{margin:3px 0 25px;font-weight:700;letter-spacing:.15em}header>p span{color:var(--accent);margin:0 8px}.panel{max-width:850px;margin:auto;padding:30px;border:1px solid #ffffff12;border-radius:22px;background:linear-gradient(145deg,#24282c,#17191b);box-shadow:0 20px 60px #0007}.heading{display:flex;justify-content:space-between;align-items:center}.heading b{color:var(--accent)}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 15px}.toolbar button,.actions button{color:var(--text);background:#34393e;border:1px solid #ffffff12;border-radius:11px;padding:11px 16px}.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:9px;max-height:48vh;overflow:auto}.word{position:relative}.word input{position:absolute;opacity:0}.word label{min-height:48px;padding:10px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid #ffffff12;border-radius:12px;background:#17191b;color:#cdd1d4;font-weight:650}.word input:checked+label{color:#fff;border-color:#c9cdd0;background:linear-gradient(145deg,#555b60,#292d31);box-shadow:inset 0 1px #fff5,0 4px 12px #0005}.primary{width:100%;margin-top:20px;border:0;border-radius:11px;padding:12px;color:#191b1d;font-weight:800;background:linear-gradient(145deg,#f1f2f3,#aeb3b7);box-shadow:inset 0 1px #fff,0 8px 20px #0005}.primary:disabled{opacity:.35;cursor:not-allowed}small{display:block;color:var(--muted);text-align:center;margin-top:12px}.gamehead{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-bottom:20px}.player{padding:12px 18px;border:1px solid #ffffff10;border-radius:15px;background:#1b1e21;text-align:left}.player:last-child{text-align:right}.player.active{border-color:#d8b56a99;box-shadow:0 0 25px #d8b56a18}.player strong{display:block;font-size:1.7rem}.turn{color:var(--muted);font-size:.85rem}.turn strong{color:var(--accent);font-size:1.05rem}.board-wrap{padding:clamp(8px,2vw,18px);border-radius:24px;background:#0c0e0f;box-shadow:inset 0 0 30px #0008,0 20px 50px #0007}.board{--cols:4;display:grid;grid-template-columns:repeat(var(--cols),minmax(55px,1fr));gap:clamp(7px,1.5vw,14px);max-width:900px;margin:auto}.coin{position:relative;aspect-ratio:1;min-width:0;perspective:1000px;border:0;padding:0;background:none;cursor:pointer;display:block;overflow:visible}.inner{position:absolute;inset:0;display:block;transform:rotateY(0deg);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1);will-change:transform}.coin.flipped .inner,.coin.matched .inner{transform:rotateY(180deg)!important}.face{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;display:grid;place-items:center;overflow:hidden}.front{background:radial-gradient(circle at 32% 25%,#f8fafb,#d9dde0 20%,#a9afb4 48%,#6f767b 78%,#4f555a);border:clamp(3px,.45vw,6px) solid #aeb4b8;box-shadow:inset 3px 3px 5px #fff9,inset -6px -7px 10px #0009,0 7px 12px #0008}.front:after{content:"✦";color:#686e73;font-size:25%}.back{transform:rotateY(180deg);padding:8%;text-align:center;color:#25292c;font-size:clamp(9px,1.8vw,19px);font-weight:950;overflow-wrap:anywhere;background:radial-gradient(circle at 34% 27%,#fff,#dfe2e4 16%,#b8bdc1 52%,#767c81 82%,#555b60);border:clamp(3px,.45vw,6px) solid #b7bdc1;box-shadow:inset 3px 3px 5px #fff9,inset -6px -7px 10px #0009,0 7px 12px #0008}.actions{display:flex;justify-content:center;gap:10px;margin-top:18px}.modal{position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:20px;background:#000b;backdrop-filter:blur(7px)}.modalcard{width:min(430px,100%);padding:35px 25px;text-align:center;border:1px solid #ffffff1a;border-radius:25px;background:linear-gradient(145deg,#282c30,#151719);box-shadow:0 25px 80px #000c}.modalcard h2{font-size:2rem}@media(max-width:600px){.app{width:96vw}.gamehead{grid-template-columns:1fr 1fr}.turn{grid-column:1/-1;grid-row:1;order:-1}.words{grid-template-columns:repeat(2,1fr)}.actions{flex-direction:column}.actions button{width:100%}}
+
+/* Couleurs des joueurs et propriété des paires */
+#p0.active{border-color:#ef4d55;box-shadow:0 0 25px #ef4d554d,inset 0 0 18px #ef4d5518}
+#p0.active span,#p0.active strong{color:#ff656d}
+#p1.active{border-color:#45cf78;box-shadow:0 0 25px #45cf784d,inset 0 0 18px #45cf7818}
+#p1.active span,#p1.active strong{color:#5de08b}
+.coin.phoenix-owned .back{border-color:#ef4d55;background:radial-gradient(circle at 34% 27%,#fff 0,#e6d8d9 18%,#c4a9ac 48%,#9a686d 76%,#65474a 100%);box-shadow:inset 3px 3px 5px #fff9,inset -6px -7px 10px #0009,inset 0 0 22px #ef4d554d,0 0 0 4px #ef4d55,0 0 24px #ef4d55b3,0 7px 12px #0008}
+.coin.trex-owned .back{border-color:#45cf78;background:radial-gradient(circle at 34% 27%,#fff 0,#d9e8df 18%,#accbb7 48%,#6e9c7d 76%,#476652 100%);box-shadow:inset 3px 3px 5px #fff9,inset -6px -7px 10px #0009,inset 0 0 22px #45cf784d,0 0 0 4px #45cf78,0 0 24px #45cf78b3,0 7px 12px #0008}
+.coin.phoenix-owned .back::before,.coin.trex-owned .back::before{content:"";position:absolute;inset:8%;border-radius:50%;border:3px solid currentColor;opacity:.9;pointer-events:none}
+.coin.phoenix-owned .back::before{color:#ef4d55;box-shadow:inset 0 0 12px #ef4d5566}
+.coin.trex-owned .back::before{color:#45cf78;box-shadow:inset 0 0 12px #45cf7866}
+
+/* PWA / iPhone safe areas */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+button, label { touch-action: manipulation; }
+
+
+/* ===== Écran privé PIN ===== */
+body.locked .app { visibility: hidden; }
+.lock-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  display: grid; place-items: center; padding: 24px;
+  background:
+    radial-gradient(circle at 50% 10%, #34393d 0, transparent 38%),
+    #0e1012;
+}
+.lock-screen.unlocked { display: none; }
+.lock-card {
+  width: min(390px, 94vw);
+  padding: 30px 24px 26px;
+  text-align: center;
+  border: 1px solid #ffffff18;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #262a2e, #151719);
+  box-shadow: 0 30px 90px #000c;
+}
+.lock-card h1 { margin: 8px 0 0; letter-spacing: .18em; }
+.lock-card > p { color: #aeb4b8; }
+.lock-card > p span { color: #d8b56a; font-weight: 800; margin: 0 6px; }
+.lock-coin {
+  width: 70px; height: 70px; margin: auto; display: grid; place-items: center;
+  border-radius: 50%; font-size: 30px; color: #555b60;
+  background: radial-gradient(circle at 32% 25%, #fff, #cdd1d4 25%, #7a8085 75%, #50565b);
+  border: 4px solid #aeb4b8;
+  box-shadow: inset 3px 3px 6px #fff8, inset -5px -6px 9px #0008, 0 10px 30px #0008;
+}
+.pin-dots { display: flex; justify-content: center; gap: 16px; margin: 25px 0 22px; }
+.pin-dots i {
+  width: 15px; height: 15px; border-radius: 50%;
+  border: 2px solid #aeb4b8; background: transparent; transition: .15s;
+}
+.pin-dots i.filled { background: #e7eaec; box-shadow: 0 0 12px #fff6; }
+.pin-pad {
+  display: grid; grid-template-columns: repeat(3, 68px);
+  justify-content: center; gap: 12px;
+}
+.pin-pad button {
+  width: 68px; height: 54px; border-radius: 17px; border: 1px solid #ffffff18;
+  background: #30353a; color: white; font-size: 1.25rem; font-weight: 750;
+}
+.pin-pad button:active { transform: scale(.95); background: #484e54; }
+.pin-pad .pin-empty { visibility: hidden; pointer-events: none; }
+.pin-message { min-height: 22px; margin: 18px 0 0 !important; font-size: .9rem; }
+.pin-message.error { color: #ef6666; }
+.pin-message.ok { color: #66d48b; }

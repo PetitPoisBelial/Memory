@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Memory — Phoenix vs T-Rex</title><link rel="stylesheet" href="style.css"></head><body>
+  <section id="lockScreen" class="lock-screen">
+    <div class="lock-card">
+      <div class="lock-coin">✦</div>
+      <h1>MEMORY</h1>
+      <p>Phoenix <span>VS</span> T-Rex</p>
+      <div id="pinDots" class="pin-dots" aria-label="Code PIN">
+        <i></i><i></i><i></i><i></i>
+      </div>
+      <div class="pin-pad" aria-label="Clavier PIN">
+        <button data-pin="1">1</button><button data-pin="2">2</button><button data-pin="3">3</button>
+        <button data-pin="4">4</button><button data-pin="5">5</button><button data-pin="6">6</button>
+        <button data-pin="7">7</button><button data-pin="8">8</button><button data-pin="9">9</button>
+        <button class="pin-empty" tabindex="-1"></button><button data-pin="0">0</button><button id="pinBack" aria-label="Effacer">⌫</button>
+      </div>
+      <p id="pinMessage" class="pin-message">Entre ton code à 4 chiffres</p>
+    </div>
+  </section><main class="app"><section id="setup" class="screen"><header><div class="coin-logo">✦</div><h1>MEMORY</h1><p>PHOENIX <span>VS</span> T-REX</p></header><div class="panel"><div class="heading"><h2>Préparer la partie</h2><b id="count">0 paire</b></div><div class="toolbar"><button id="all">Tout sélectionner</button><button id="none">Tout désélectionner</button><button id="random">Sélection aléatoire</button></div><div id="words" class="words"></div><button id="start" class="primary" disabled>Commencer la partie</button><small>Choisis au moins 2 mots. Chaque mot donne une paire.</small></div></section><section id="game" class="screen hidden"><header class="gamehead"><div id="p0" class="player active">Phoenix<strong id="s0">0</strong></div><div class="turn">Tour de <strong id="turn">Phoenix</strong></div><div id="p1" class="player">T-Rex<strong id="s1">0</strong></div></header><div class="board-wrap"><div id="board" class="board"></div></div><div class="actions"><button id="change">Changer les mots</button><button id="restart">Recommencer</button></div></section></main><div id="modal" class="modal hidden"><div class="modalcard"><div class="coin-logo">✦</div><h2 id="winner"></h2><p id="result"></p><button id="new" class="primary">Nouvelle partie</button></div></div><script src="secure-loader.js"></script>
+  <script src="game.js"></script></body></html>
