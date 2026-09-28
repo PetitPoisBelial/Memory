@@ -3,7 +3,7 @@
 // Un mot = une paire. Les doublons sont ignorés.
 // ============================================================
 let mots = [];
-const clean=[...new Set(mots.map(x=>String(x).trim().toLocaleUpperCase("fr-FR")).filter(Boolean))];
+let clean = [];
 const $=id=>document.getElementById(id);let selected=[],cards=[],first=null,second=null,locked=false,player=0,scores=[0,0],pairs=0;
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function renderWords(){let box=$("words");box.innerHTML="";clean.forEach((w,i)=>{let d=document.createElement("div");d.className="word";d.innerHTML=`<input id="w${i}" type="checkbox" value="${esc(w)}"><label for="w${i}">${esc(w)}</label>`;d.querySelector("input").addEventListener("change",update);box.append(d)});update()}
@@ -19,4 +19,14 @@ function match(){const owner=player===0?"phoenix-owned":"trex-owned";$("board").
 function mismatch(){const a=$("board").children[first],c=$("board").children[second];a.classList.remove("flipped");c.classList.remove("flipped");a.querySelector(".inner").style.transform="rotateY(0deg)";c.querySelector(".inner").style.transform="rotateY(0deg)";player=1-player;first=second=null;locked=false;header()}
 function header(){$("s0").textContent=scores[0];$("s1").textContent=scores[1];$("turn").textContent=player===0?"Phoenix":"T-Rex";$('p0').classList.toggle("active",player===0);$('p1').classList.toggle("active",player===1)}
 function win(){let a=scores[0],b=scores[1];$("winner").textContent=a===b?"Égalité !":a>b?"Phoenix gagne !":"T-Rex gagne !";$("result").textContent=`Phoenix : ${a} paire${a>1?"s":""} · T-Rex : ${b} paire${b>1?"s":""}`;$("modal").classList.remove("hidden")}
-renderWords();
+window.addEventListener("memory-unlocked", (event) => {
+  mots = Array.isArray(event.detail?.words) ? event.detail.words : [];
+
+  clean = [...new Set(
+    mots
+      .map(x => String(x).trim().toLocaleUpperCase("fr-FR"))
+      .filter(Boolean)
+  )];
+
+  renderWords();
+});
